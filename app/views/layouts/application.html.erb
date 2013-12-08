@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Hoowenware</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>Hoowenware</title>
+		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="container">
+				<div id="logo">
+					<%= link_to image_tag("slampkin_logov2_medium.png", :alt => "Hoowenware Logo", :class=>"img-responsive") , site_url %>
+				</div>
+				<div class="navbar navbar-inverse" role="navigation">
 
-<%= yield %>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 
-</body>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="<%= is_active?(root_path) %>">
+								<a href="/">Home</a>
+							</li>
+							<li class="<%= is_active?("/pages/about") %>">
+								<a href="/pages/about">About</a>
+							</li>
+							<li class="<%= is_active?("/pages/contact") %>">
+								<a href="/pages/contact">Contact</a>
+							</li>
+						</ul>
+					</div><!-- /.nav-collapse -->
+				</div>
+				<%= yield %>
+
+			</div><!-- /.container -->
+		</div><!--/#wrap -->
+		<footer>
+			<div class="container">
+				&copy; <%= DateTime.now.year %> Hoowenware, Inc. · <%= link_to "Privacy" , "http://www.hoowenware.com/privacy.html" %> ·<%= link_to "Terms" , "http://www.hoowenware.com/terms.html" %>  
+			</div>
+		</footer>
+	</body>
 </html>
