@@ -1,2 +1,66 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row">
+	<center>
+		<h1>Travel Together Better</h1>
+		<h3>Plan a trip with people you know or browse and join others.</h3>
+	</center>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<center>
+			<iframe scrolling="no" allowtransparency="true" width="286" height="199" src="//www.youtube.com/embed/COGTAGcLOss" frameborder="0" allowfullscreen=""></iframe>
+		</center>
+	</div>
+	<div class="col-md-6">
+
+		<div class="form-horizontal">
+			<div class="form-group">
+
+				<h3><label for="start_trip_name" class="control-label ">Name your trip.</label></h3>
+				<input type="text" class="form-control" id="start_trip_name" placeholder="Trip name"/>
+
+			</div>
+			<button type="submit" class="btn btn-success col-md-4 input-lg" id="start_trip" data-toggle="modal" data-target="#start_trip_modal">
+				Start
+			</button>
+		</div>
+		<form>
+			<div id="start_trip_modal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Start your trip</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-horizontal">
+								<div class="form-group">
+									<label for="start_trip_name" class="control-label ">Name your trip</label>
+									<input type="text" class="form-control" id="start_trip_name" placeholder="Trip name"/>
+
+								</div>
+								<div class="form-group">
+									<label for="start_trip_description" class="control-label ">Description</label>
+									<input type="text" class="form-control" id="start_trip_description" placeholder="Trip name"/>
+
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-info col-md-3" id="start_trip">
+								Invite
+							</button>
+							<button type="submit" class="btn btn-success col-md-3" id="start_trip">
+								Create
+							</button>
+							<button type="submit" class="btn btn-warning col-md-3" id="start_trip">
+								Cancel
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

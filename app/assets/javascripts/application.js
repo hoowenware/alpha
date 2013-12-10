@@ -16,3 +16,8 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function() {
+	$("#start_trip").click(function() {
+		event.preventDefault();
+	});
+});
