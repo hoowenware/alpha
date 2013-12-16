@@ -1,0 +1,147 @@
+<%= form_tag('/trip') do -%>
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag 'name',"Name your trip:", :class=>"control-label" %>
+			<%= text_field_tag 'name',  @name, :class => 'form-control', :placeholder => 'Trip name...'%>
+		</div>
+
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag 'OrgName',"Group/Organization Name:", :class=>"control-label" %>
+			<%= text_field_tag 'OrgName',  nil, :class => 'form-control', :placeholder => 'Group/Organization Name...'%>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<%= label_tag 'Description',"Description:", :class=>"control-label" %>
+			<%= text_area_tag 'Description',  nil, :class => 'form-control', :placeholder => 'Description...', :rows => 5, :cols => 25 %>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag 'Hashtag',"Custom Hashtag:", :class=>"control-label" %>
+			<%= text_field_tag 'Hashtag',  nil, :class => 'form-control', :placeholder => 'Custom Hashtag...'%>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag 'DescriptiveTag',"Descriptive Tag:", :class=>"control-label" %>
+			<%= text_field_tag 'DescriptiveTag',  nil, :class => 'form-control', :placeholder => 'Descriptive Tag...'%>
+		</div>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag 'start',"Start:", :class=>"control-label" %>
+			<%= text_field_tag 'start',  nil, :class => 'form-control', :placeholder => 'Start Date...'%>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="form-group">
+			<%= label_tag 'end',"End:", :class=>"control-label" %>
+			<%= text_field_tag 'end',  nil, :class => 'form-control', :placeholder => 'End date...'%>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="form-group">
+			<div class="control-label">&nbsp;</div>
+			<!-- Button trigger modal -->
+			<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#datepoll">
+				Poll
+			</button>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="form-group">
+			<%= label_tag 'Location',"Location(s)", :class=>"control-label" %>
+			<%= text_field_tag 'Location',  nil, :class => 'form-control', :placeholder => 'Location...' %>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<div class="form-group">
+			<div class="control-label">&nbsp;</div>
+			<!-- Button trigger modal -->
+			<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#locationpoll">
+				Poll
+			</button>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<div class="form-group">
+			<%= label_tag 'privacy',"Privacy", :class=>"control-label" %>
+			<%= select_tag 'privacy',  "<option>Private</option><option>Public</option>".html_safe, :class => 'form-control', :placeholder => 'Privacy...' %>
+		</div>
+	</div>
+	<div class="col-md-2">
+		<%= label_tag 'isvisible',"Guest List visible", :class=>"control-label" %>
+		<div class="checkbox">
+
+			<%= check_box_tag 'isvisible', 'isvisible'%>
+		</div>
+
+	</div>
+</div>
+<di>
+	<div class="form-group"></div>
+	<% end -%>
+
+	<!--Date Modal -->
+	<div class="modal fade" id="datepoll" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Date Poll</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						Close
+					</button>
+					<button type="button" class="btn btn-primary">
+						Save changes
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /. Date modal -->
+	<!--Location Modal -->
+	<div class="modal fade" id="locationpoll" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Date Poll</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						Close
+					</button>
+					<button type="button" class="btn btn-primary">
+						Save changes
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /. Location modal -->

@@ -18,6 +18,6 @@
 
 $(document).ready(function() {
 	$("#start_trip").click(function() {
-		event.preventDefault();
+		
 	});
 });

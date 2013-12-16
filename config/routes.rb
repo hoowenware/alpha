@@ -1,7 +1,11 @@
 Hoowenware::Application.routes.draw do
+  get "trip/start"
   get "pages/home"
   get "pages/about"
   get "pages/contact"
+  
+  post 'trip/', to: 'trip#start', as: 'new_trip'
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

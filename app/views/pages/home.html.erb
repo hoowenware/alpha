@@ -11,56 +11,19 @@
 		</center>
 	</div>
 	<div class="col-md-6">
-
+		<%= form_tag('/trip') do -%>
 		<div class="form-horizontal">
 			<div class="form-group">
 
-				<h3><label for="start_trip_name" class="control-label ">Name your trip.</label></h3>
-				<input type="text" class="form-control" id="start_trip_name" placeholder="Trip name"/>
+				<h3> <%= label_tag 'name',"Name your trip", :class=>"control-label" %></h3>
+				<%= text_field_tag 'name', nil, :class => 'form-control', :placeholder => 'Trip name...'%>
 
 			</div>
-			<button type="submit" class="btn btn-success col-md-4 input-lg" id="start_trip" data-toggle="modal" data-target="#start_trip_modal">
+			<button type="submit" class="btn btn-success col-md-4 input-lg" id="start_trip" >
 				Start
 			</button>
 		</div>
-		<form>
-			<div id="start_trip_modal" class="modal fade">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								&times;
-							</button>
-							<h4 class="modal-title" id="myModalLabel">Start your trip</h4>
-						</div>
-						<div class="modal-body">
-							<div class="form-horizontal">
-								<div class="form-group">
-									<label for="start_trip_name" class="control-label ">Name your trip</label>
-									<input type="text" class="form-control" id="start_trip_name" placeholder="Trip name"/>
 
-								</div>
-								<div class="form-group">
-									<label for="start_trip_description" class="control-label ">Description</label>
-									<input type="text" class="form-control" id="start_trip_description" placeholder="Trip name"/>
-
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-info col-md-3" id="start_trip">
-								Invite
-							</button>
-							<button type="submit" class="btn btn-success col-md-3" id="start_trip">
-								Create
-							</button>
-							<button type="submit" class="btn btn-warning col-md-3" id="start_trip">
-								Cancel
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</form>
+		<% end -%>
 	</div>
 </div>
